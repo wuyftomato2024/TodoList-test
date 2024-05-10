@@ -1,16 +1,15 @@
-import './App.css';
-import TodoList from './main/TodoList';
-import { BrowserRouter , Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
+
+import { Main } from './pages/main/main';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Routes>
-        
-        <Route exact path="/main" element={<TodoList/>}>
-        </Route>
-      
-       </Routes>
+        <Route exact path="/" element={<Navigate to={"/main"} />}/>
+        <Route exact path="/main" element={<Main />}/>
+      </Routes>
     </BrowserRouter>
   );
 };
