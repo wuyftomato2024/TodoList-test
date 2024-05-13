@@ -2,6 +2,8 @@ import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
 
 import { Main } from './pages/main/main';
 
+
+
 function App() {
 
   return (
