@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Mainstyle = styled.div`
-background-color: saddlebrown;
+background-color: aqua;
 display: flex;
 justify-content: center;
 align-items: center;

@@ -1,11 +1,20 @@
 import React from "react";
+import { Titlestyle,Headstyle } from "./styled";
 
 export const Header = () => {
 
     return(
-        <div>
-            <h1>TodoList</h1>
-            </div>
+        <Titlestyle>
+            <div>
+    
+                <Headstyle>
+                    <h1>TodoList</h1>
+                </Headstyle>
+                
+                
+                </div>
+        </Titlestyle>
+
     )
 
 };
