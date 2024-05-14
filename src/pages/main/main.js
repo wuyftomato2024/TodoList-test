@@ -10,17 +10,26 @@ export const Main = () => {
 
 
     const [todos, setTodos] = useState([
-        { id: 1, name: "todo1", completed: false },
-        // { id: 2, name: "todo2", completed: false },
+        { id: 1, name: "react勉強", completed: false },
+        { id: 2, name: "マナー教育", completed: false },
     ]);
+    //todosはuseState初期値、setTodosはuseState更新する値
+
 
     const todoNameRef = useRef();
+    //値を取得するHook、<input>で
     
     const handleAddTodo = () =>{
         const name = todoNameRef.current.value;
+        //current.valueは現在の値
+
         
         setTodos([...todos,{id:uuidv4(), name:name,completed:false}]);
         todoNameRef.current.value =null;
+        //<...todos>はtodosのuseState中に新しい配列を作ることです,もとのtodo中のものは保持されます。
+        // uuidはシステム内で重複することのない値を作るため使います,v4を選ぶ理由はセキュリティが高いかも
+        // null;: 新しいToDoが追加された後、ToDo名を入力するinput要素の値を null に設定しています。これにより、ToDoを追加した後に入力フィールドがクリアされます。
+        
     };
 
 
@@ -43,8 +52,9 @@ export const Main = () => {
 
     return (
         <Mainstyle>
+            <h1>やること</h1>
             <div>
-               <input type="text" ref={todoNameRef} />
+               <input type="text" ref={todoNameRef} style={{width:"100%"}}/>
                {todos.map((todo) => (
                     <div key={todo.id} style={{ display: "flex",   alignItems: "center" }} >
                         <input
@@ -54,7 +64,12 @@ export const Main = () => {
                         />
 
 
-                       <TextBar props={todo}/>
+                       <TextBar props={todo} />
+                       {/* 別のコンポーネントに値を渡す方法は
+                       コンポーネント名＋props名={渡す値}
+                       　　TextBar　　＋ props= {todo} 
+                       todosではなくtodoの理由は、ここは前useStateのtodosを渡すではなくこのmapに宣言したtodoを渡すため。
+                       */}
                     </div>
                 ))}
                 

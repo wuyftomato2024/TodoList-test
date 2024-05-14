@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Headstyle = styled.div`
 
-background-color: cornflowerblue;
+background-color: #ff7f50;
 padding:25px;
 
 `;
 
 export const Titlestyle = styled.div`
 
-color: aliceblue;
+color: #000000;
 
 `;
 
