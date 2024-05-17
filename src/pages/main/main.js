@@ -56,7 +56,7 @@ export const Main = () => {
             <div>
                <input type="text" ref={todoNameRef} style={{width:"100%"}}/>
                {todos.map((todo) => (
-                    <div key={todo.id} style={{ display: "flex",   alignItems: "center" }} >
+                    <div key={todo.id} style={{ display: "flex",alignItems: "center" }} >
                         <input
                             type="checkbox"
                             checked={todo.completed}
